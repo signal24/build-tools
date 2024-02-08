@@ -13,5 +13,5 @@ RUN mkdir build && \
         go build -o build/${file%.go} $file; \
     done
 
-FROM gcr.io/kaniko-project/executor:v1.13.0-debug
+FROM gcr.io/kaniko-project/executor:v1.20.0-debug
 COPY --from=builder /src/build/* /bin/
