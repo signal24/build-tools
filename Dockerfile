@@ -13,7 +13,7 @@ RUN mkdir build && \
     go build -o build/${file%.go} $file; \
     done
 
-FROM gcr.io/kaniko-project/executor:v1.21.0-debug AS kaniko
+FROM gcr.io/kaniko-project/executor:v1.22.0-debug AS kaniko
 
 FROM alpine:latest
 
