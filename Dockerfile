@@ -1,4 +1,4 @@
-FROM golang:1.20 AS builder
+FROM golang:1.22 AS builder
 WORKDIR /src
 ARG TARGETARCH
 ARG TARGETOS
@@ -13,7 +13,7 @@ RUN mkdir build && \
     go build -o build/${file%.go} $file; \
     done
 
-FROM gcr.io/kaniko-project/executor:v1.22.0-debug AS kaniko
+FROM gcr.io/kaniko-project/executor:v1.23.2-debug AS kaniko
 
 FROM alpine:latest
 
